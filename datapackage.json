@@ -1,0 +1,273 @@
+{
+  "model": {
+    "dimensions": {
+      "transaction-id": {
+        "dimensionType": "fact",
+        "primaryKey": [
+          "trns_id"
+        ],
+        "attributes": {
+          "trns_id": {
+            "source": "trns_id",
+            "title": "trns_id"
+          }
+        }
+      },
+      "date": {
+        "dimensionType": "datetime",
+        "primaryKey": [
+          "doc_datd",
+          "msrprd_date"
+        ],
+        "attributes": {
+          "doc_datd": {
+            "source": "doc_datd",
+            "title": "doc_datd"
+          },
+          "msrprd_date": {
+            "source": "msrprd_date",
+            "title": "msrprd_date"
+          }
+        }
+      },
+      "unknown": {
+        "dimensionType": "other",
+        "primaryKey": [
+          "doc_nazn"
+        ],
+        "attributes": {
+          "doc_nazn": {
+            "source": "doc_nazn",
+            "title": "doc_nazn"
+          }
+        }
+      },
+      "administrator": {
+        "dimensionType": "entity",
+        "primaryKey": [
+          "payer_edrpou"
+        ],
+        "attributes": {
+          "payer_nm": {
+            "source": "payer_nm",
+            "title": "payer_nm",
+            "labelfor": "payer_edrpou"
+          },
+          "payer_edrpou": {
+            "source": "payer_edrpou",
+            "title": "payer_edrpou"
+          }
+        }
+      },
+      "recipient": {
+        "dimensionType": "entity",
+        "primaryKey": [
+          "recipt_edrpou"
+        ],
+        "attributes": {
+          "recipt_nm": {
+            "source": "recipt_nm",
+            "title": "recipt_nm",
+            "labelfor": "recipt_edrpou"
+          },
+          "recipt_edrpou": {
+            "source": "recipt_edrpou",
+            "title": "recipt_edrpou"
+          },
+          "recipt_mfo_knw_id": {
+            "source": "recipt_mfo_knw_id",
+            "title": "recipt_mfo_knw_id"
+          },
+          "recipt_mfo_nm": {
+            "source": "recipt_mfo_nm",
+            "title": "recipt_mfo_nm",
+            "labelfor": "recipt_mfo_nm"
+          }
+        }
+      },
+      "procurer": {
+        "dimensionType": "entity",
+        "primaryKey": [
+          "payer_mfo_knw_id",
+          "payer_mfo_nm"
+        ],
+        "attributes": {
+          "payer_mfo_knw_id": {
+            "source": "payer_mfo_knw_id",
+            "title": "payer_mfo_knw_id"
+          },
+          "payer_mfo_nm": {
+            "source": "payer_mfo_nm",
+            "title": "payer_mfo_nm",
+            "labelfor": "payer_mfo_knw_id"
+          }
+        }
+      }
+    },
+    "measures": {
+      "doc_sq": {
+        "source": "doc_sq",
+        "title": "doc_sq",
+        "currency": "UAH",
+        "phase": "executed"
+      }
+    }
+  },
+  "regionCode": "eu",
+  "countryCode": "UA",
+  "fiscalPeriod": {
+    "start": "2015-09-11",
+    "end": "2015-09-15"
+  },
+  "title": "Ukraine transactions Sep 11, 2015 - Sep 15, 2015",
+  "name": "ukraine_2015-09-11_2015-09-15_2",
+  "resources": [
+    {
+      "name": "transactions",
+      "format": "csv",
+      "path": "transactions.csv",
+      "mediatype": "text/csv",
+      "bytes": 55465970,
+      "dialect": {
+        "csvddfVersion": 1,
+        "delimiter": ",",
+        "lineTerminator": "\n"
+      },
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "title": "trns_id",
+            "name": "trns_id",
+            "slug": "trns_id",
+            "type": "string",
+            "format": "default",
+            "osType": "transaction-id:code",
+            "conceptType": "transaction-id"
+          },
+          {
+            "title": "doc_datd",
+            "name": "doc_datd",
+            "slug": "doc_datd",
+            "type": "date",
+            "format": "fmt:%d.%m.%Y",
+            "osType": "date:generic",
+            "conceptType": "date"
+          },
+          {
+            "title": "msrprd_date",
+            "name": "msrprd_date",
+            "slug": "msrprd_date",
+            "type": "date",
+            "format": "fmt:%d.%m.%Y",
+            "osType": "date:generic",
+            "conceptType": "date"
+          },
+          {
+            "title": "doc_nazn",
+            "name": "doc_nazn",
+            "slug": "doc_nazn",
+            "type": "string",
+            "format": "default",
+            "osType": "unknown:string",
+            "conceptType": "unknown"
+          },
+          {
+            "title": "payer_nm",
+            "name": "payer_nm",
+            "slug": "payer_nm",
+            "type": "string",
+            "format": "default",
+            "osType": "administrator:generic:name",
+            "conceptType": "administrator"
+          },
+          {
+            "title": "recipt_nm",
+            "name": "recipt_nm",
+            "slug": "recipt_nm",
+            "type": "string",
+            "format": "default",
+            "osType": "recipient:generic:name",
+            "conceptType": "recipient"
+          },
+          {
+            "title": "doc_sq",
+            "name": "doc_sq",
+            "slug": "doc_sq",
+            "type": "number",
+            "format": "default",
+            "osType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "groupChar": ","
+          },
+          {
+            "title": "payer_edrpou",
+            "name": "payer_edrpou",
+            "slug": "payer_edrpou",
+            "type": "string",
+            "format": "default",
+            "osType": "administrator:generic:id",
+            "conceptType": "administrator"
+          },
+          {
+            "title": "recipt_edrpou",
+            "name": "recipt_edrpou",
+            "slug": "recipt_edrpou",
+            "type": "string",
+            "format": "default",
+            "osType": "recipient:generic:id",
+            "conceptType": "recipient"
+          },
+          {
+            "title": "recipt_mfo_knw_id",
+            "name": "recipt_mfo_knw_id",
+            "slug": "recipt_mfo_knw_id",
+            "type": "string",
+            "format": "default",
+            "osType": "recipient:bank:branch:code",
+            "conceptType": "recipient"
+          },
+          {
+            "title": "recipt_mfo_nm",
+            "name": "recipt_mfo_nm",
+            "slug": "recipt_mfo_nm",
+            "type": "string",
+            "format": "default",
+            "osType": "recipient:bank:branch:name",
+            "conceptType": "recipient"
+          },
+          {
+            "title": "payer_mfo_knw_id",
+            "name": "payer_mfo_knw_id",
+            "slug": "payer_mfo_knw_id",
+            "type": "string",
+            "format": "default",
+            "osType": "procurer:bank:branch:code",
+            "conceptType": "procurer"
+          },
+          {
+            "title": "payer_mfo_nm",
+            "name": "payer_mfo_nm",
+            "slug": "payer_mfo_nm",
+            "type": "string",
+            "format": "default",
+            "osType": "procurer:bank:branch:name",
+            "conceptType": "procurer"
+          }
+        ],
+        "primaryKey": [
+          "trns_id",
+          "doc_datd",
+          "msrprd_date",
+          "payer_edrpou",
+          "recipt_edrpou"
+        ]
+      }
+    }
+  ],
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "owner": "8c4b4a99d5794c95f52c58a2bf8e1710",
+  "author": "Vanya Yani <vanuan@gmail.com>",
+  "count_of_rows": 122004
+}
