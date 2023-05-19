@@ -125,7 +125,7 @@
     {
       "name": "transactions",
       "format": "csv",
-      "path": "https://storage.openspending.org/transactions.csv",
+      "path": "https://storage.openspending.org/ukraine-transactions-sep-11-2015-sep-15-2015/transactions.csv",
       "mediatype": "text/csv",
       "bytes": 55465970,
       "dialect": {
