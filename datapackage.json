@@ -125,7 +125,7 @@
     {
       "name": "transactions",
       "format": "csv",
-      "path": "transactions.csv",
+      "path": "https://storage.openspending.org/transactions.csv",
       "mediatype": "text/csv",
       "bytes": 55465970,
       "dialect": {
